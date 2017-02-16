@@ -41,12 +41,14 @@ public class Cellar : MonoBehaviour
     void Update()
     {
         #region Draging started
+        if (!isDragable)
+            return;
 #if UNITY_ANDROID || UNITY_IOS
         if (Input.touches.Length > 0 && Input.touches[0].phase == TouchPhase.Began)
         {
             clickPos = Input.touches[0].position;
 #else
-        if (isDragable && Input.GetAxis("Fire1") > 0.5f && !isMouseButtonPressedInPrevFrame)
+        if (Input.GetAxis("Fire1") > 0.5f && !isMouseButtonPressedInPrevFrame)
         {
             clickPos = Input.mousePosition;
 #endif

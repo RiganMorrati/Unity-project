@@ -4,7 +4,7 @@ public class Candy : Wall
 {
     public System.Action onMoveEnded;
     bool isMoving = false;
-    const float moveTime = 0.2f;
+    const float moveTime = 0.1f;
 
     public Candy()
     {
